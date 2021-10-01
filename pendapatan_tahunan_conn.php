@@ -35,7 +35,7 @@
     $c = array("xAxisName"=>"Tahun",
             "yAxisName"=>"Jumlah Keuangan",
             "formatnumberscale"=>"1",
-            "theme"=>"ocean",
+            "theme"=>"fint",
             "drawcrossline"=>"1"); 
     
     $gabung = array("chart"=>$c, "categories"=>[array("category"=>$g)], "dataset"=>[array("seriesname"=>"Jumlah Pendapatan", "data"=>$d),

@@ -17,7 +17,7 @@
             "showpercentintooltip"=>"0",
             "numbersuffix"=>" Pelanggan",
             "enablemultislicing"=>"1",
-            "theme"=>"ocean"); 
+            "theme"=>"fint"); 
     
     $gabung = array("chart"=>$c, "data"=>$d);
     //print_r($gabung);

@@ -11,7 +11,7 @@
 
     <script src="jquery.js"></script>
     <script type="text/javascript" src="pustaka_FSC/js/fusioncharts.js"></script>
-    <script type="text/javascript" src="pustaka_FSC/js/themes/fusioncharts.theme.ocean.js"></script>
+    <script type="text/javascript" src="pustaka_FSC/js/themes/fusioncharts.theme.fint.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       function openFileAsset()
@@ -83,10 +83,9 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon">
+                    <img src="pictures/iconplus.png" class="img-fluid" width="38%">
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
             </a>
 
             <!-- Divider -->
@@ -104,85 +103,55 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Korporat
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="#"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>KPI Korporat</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
-                    </div>
-                </div>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                <a class="nav-link collapsed" href="#"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Program Strategis</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
             </li>
 
-            <!-- Divider -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Program Kerja Direktorat</span>
+                </a>
+            </li>
+
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Keuangan
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <span>Laba Rugi</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Arus Kas</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Revenue SBU</span></a>
             </li>
 
             <!-- Divider -->
@@ -296,7 +265,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Rp 13.721.580.000,-</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -314,7 +283,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">268.039</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-user-friends fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -327,23 +296,16 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Pendapatan
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Rp 9.781.177.000,-</div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -356,12 +318,12 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Jumlah Laba
+                                                </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp 2.031.662.000,-</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -381,7 +343,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Jumlah Aset Per Tahun</h6>
                                     <div class="dropdown no-arrow">
                                         <div class="d-flex justify-content-center my-2">
-                                            <a href="jumlah_aset.php" class="btn btn-primary m-2" onclick="alertAset()">Export Excel</a>
+                                            <a href="jumlah_aset.php" class="btn btn-success m-2" onclick="alertAset()">Export Excel</a>
                                             <a href="laporan_jumlah_aset.php" class="btn btn-danger m-2" target="_blank">Export PDF</a>
                                           </div>
                                     </div>
@@ -403,7 +365,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Pelanggan Layanan</h6>
                                     <div class="dropdown no-arrow">
                                         <div class="d-flex justify-content-center my-2">
-                                            <a href="layanan.php" class="btn btn-primary m-2" onclick="alertAset()">Export Excel</a>
+                                            <a href="layanan.php" class="btn btn-success m-2" onclick="alertAset()">Export Excel</a>
                                             <a href="laporan_layanan.php" class="btn btn-danger m-2" target="_blank">Export PDF</a>
                                         </div>
                                     </div>
@@ -425,7 +387,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Keuangan Tahunan</h6>
                                     <div class="dropdown no-arrow">
                                         <div class="d-flex justify-content-center my-2">
-                                            <a href="pendapatan_tahunan.php" class="btn btn-primary m-2" onclick="alertAset()">Export Excel</a>
+                                            <a href="pendapatan_tahunan.php" class="btn btn-success m-2" onclick="alertAset()">Export Excel</a>
                                             <a href="laporan_keuangan_tahunan.php" class="btn btn-danger m-2" target="_blank">Export PDF</a>  
                                         </div>
                                     </div>

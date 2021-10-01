@@ -15,7 +15,7 @@
 
     $c = array("xAxisName"=>"Tahun",
             "yAxisName"=>"Aset",
-            "theme"=>"ocean"); 
+            "theme"=>"fint"); 
     
     $gabung = array("chart"=>$c, "data"=>$d);
     //print_r($gabung);
