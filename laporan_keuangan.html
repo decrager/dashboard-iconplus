@@ -11,25 +11,18 @@
 
     <title>Laporan Keuangan | Icon Plus</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/sidebar-style.css" rel="stylesheet">
 
-    <style>
-      .finance-section .card .card-body table td, .finance-section .card .card-body table th  {
-        vertical-align: middle;
-      }
-      .finance-section .card .card-body table .button-cell {
-        background-color: transparent;
-        padding: 0 0 0 12px;
-      }
-    </style>
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -42,7 +35,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon">
                     <img src="pictures/iconplus.png" class="img-fluid" width="38%">
                 </div>
@@ -53,7 +46,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -145,6 +138,23 @@
         </ul>
         <!-- End of Sidebar -->
 
+        <!-- Review sidebar -->
+        <nav style="z-index: 10;" class="navbar-right d-flex flex-column align-item-start bg-primary" id="sidebar">
+            <div class="close-button d-flex justify-content-start mt-2">
+              <button type="button" class="btn btn-close text-white" id="menu-btn-close">Return</button>
+            </div>
+            <div class="container d-block mt-5">
+              <span class="h5 text-white my-3">Review Section</span>
+              <div class="form-floating my-3">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+              </div>
+              <div class="submit-button d-flex justify-content-end">
+                <button type="submit" class="btn btn-success mb-3">Submit</button>
+              </div>
+            </div>
+          </nav>
+          <!-- Review sidebar -->
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -216,18 +226,18 @@
                                 </a>
                             </div>
                         </li>
-
                     </ul>
 
                 </nav>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="finance-section container-fluid">
+                <div class="container-fluid">
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Laporan Keuangan</h1>
 
+                    <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Laporan Keuangan Tahunan</h6>
@@ -237,7 +247,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th class="col-sm-1" style="text-align: center;">No.</th>
+                                            <th class="col-sm-1">Nomor</th>
                                             <th>Tahun</th>
                                             <th>Jumlah Pendapatan</th>
                                             <th>Jumlah Pengeluaran</th>
@@ -245,24 +255,14 @@
                                             <th class="col-sm-1" style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th class="col-sm-1" style="text-align: center;">No.</th>
-                                            <th>Tahun</th>
-                                            <th>Jumlah Pendapatan</th>
-                                            <th>Jumlah Pengeluaran</th>
-                                            <th>Jumlah Laba</th>
-                                            <th class="col-sm-1" style="text-align: center;">Aksi</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         <tr>
-                                            <td class="col-sm-1" style="text-align: center;">1</td>
+                                            <td class="col-sm-1">1</td>
                                             <td>2015</td>
                                             <td>1609237000</td>
                                             <td>1272065000</td>
                                             <td>337172000</td>
-                                            <td class="col-sm-1" style="text-align: center;"><button class="btn btn-primary ms-auto">Review</button></td>
+                                            <td style="text-align: center;"><button type="button" class="btn btn-primary" id="menu-btn">Review</button></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -317,7 +317,7 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
+    <!-- Bootstrap core JavaScript-->   
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -328,12 +328,25 @@
     <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-    <script src="js/demo/chart-bar-demo.js"></script>
+    <script src="js/demo/datatables-demo.js"></script>
+
+    <script>
+        var menu_btn = document.querySelector("#menu-btn")
+        var menu_btn_close = document.querySelector("#menu-btn-close")
+        var sidebar = document.querySelector("#sidebar")
+        var container = document.querySelector(".my-container")
+        menu_btn.addEventListener("click", () => {
+            sidebar.classList.toggle("active-nav")
+        })
+        menu_btn_close.addEventListener("click", () => {
+          sidebar.classList.toggle("active-nav")
+          container.classList.toggle("active-cont")
+        })
+    </script>
 
 </body>
 

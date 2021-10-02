@@ -9,10 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <script src="jquery.js"></script>
     <script type="text/javascript" src="pustaka_FSC/js/fusioncharts.js"></script>
     <script type="text/javascript" src="pustaka_FSC/js/themes/fusioncharts.theme.fint.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       function openFileAsset()
       {
@@ -251,7 +249,6 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -485,7 +482,6 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-
 </body>
 
 </html>
