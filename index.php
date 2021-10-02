@@ -106,7 +106,7 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="layanan.html"
+                <a class="nav-link collapsed" href="layananpage.php"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-file-invoice"></i>
                     <span>Layanan</span>
@@ -144,13 +144,13 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="laporan_keuangan.html">
+                <a class="nav-link" href="laporan_keuangan.php">
                     <i class="fas fa-money-bill-wave fa-chart-area"></i>
                     <span>Laporan Keuangan</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="aset_icon.html">
+                <a class="nav-link" href="aset.php">
                     <i class="fas fa-money-bill-wave fa-chart-area"></i>
                     <span>Aset</span></a>
             </li>

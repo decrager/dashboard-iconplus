@@ -1,3 +1,12 @@
+<?php 
+$server = "localhost";
+$user   = "root";
+$ps     = "";
+$nama_db = "db_icon";
+
+$kon = mysqli_connect($server,$user,$ps,$nama_db);
+
+$hsl = mysqli_query($kon, "SELECT * FROM layanan"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +69,7 @@
             </div>
  
             <li class="nav-item active">
-                <a class="nav-link collapsed" href="layanan.html"
+                <a class="nav-link collapsed" href="layananpage.php"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-file-invoice"></i>
                     <span>Layanan</span>
@@ -98,13 +107,13 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="laporan_keuangan.html">
+                <a class="nav-link" href="laporan_keuangan.php">
                     <i class="fas fa-money-bill-wave fa-chart-area"></i>
                     <span>Laporan Keuangan</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="aset_icon.html">
+                <a class="nav-link" href="aset.php">
                     <i class="fas fa-money-bill-wave fa-chart-area"></i>
                     <span>Aset</span></a>
             </li>
@@ -254,13 +263,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php $i=1 ?>
+                                        <?php foreach($hsl as $layanan) : ?>
                                         <tr>
-                                            <td class="col-sm-1">1</td>
-                                            <td>ICONNect</td>
-                                            <td>45.649</td>
-                                            <td style="text-align: center;"><button type="button" class="btn btn-primary" id="menu-btn">Review</button></td>
+                                            <td class="col-sm-1"><?= $i; ?></td>
+                                            <td><?= $layanan['jenis_layanan']; ?></td>
+                                            <td><?= $layanan['jml_pelanggan']; ?></td>
+                                            <td style="text-align: center;"><button type="button" class="btn btn-primary" id="menu-btn<?=$i?>">Review</button></td>
+                                            <?php $i++ ?>
                                         </tr>
-                                        <tr>
+                                        <?php endforeach; ?>
+                                        <!-- <tr>
                                             <td class="col-sm-1">2</td>
                                             <td>ICONWeb</td>
                                             <td>32.102</td>
@@ -283,7 +296,7 @@
                                             <td>ICONNet</td>
                                             <td>82.475</td>
                                             <td style="text-align: center;"><button type="button" class="btn btn-primary" id="menu-btn">Review</button></td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
@@ -355,17 +368,22 @@
     <script src="js/demo/datatables-demo.js"></script>
 
     <script>
-        var menu_btn = document.querySelector("#menu-btn")
+        <?php $i=1 ?>
+        <?php foreach($hsl as $layanan) : ?>
+        var menu_btn<?=$i?> = document.querySelector("#menu-btn<?=$i?>")
+        
         var menu_btn_close = document.querySelector("#menu-btn-close")
         var sidebar = document.querySelector("#sidebar")
         var container = document.querySelector(".my-container")
-        menu_btn.addEventListener("click", () => {
+        menu_btn<?=$i?>.addEventListener("click", () => {
             sidebar.classList.toggle("active-nav")
         })
         menu_btn_close.addEventListener("click", () => {
           sidebar.classList.toggle("active-nav")
           container.classList.toggle("active-cont")
         })
+        <?php $i++ ?>
+        <?php endforeach; ?>
     </script>
 
 </body>

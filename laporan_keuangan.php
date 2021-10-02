@@ -1,3 +1,13 @@
+<?php 
+$server = "localhost";
+$user   = "root";
+$ps     = "";
+$nama_db = "db_icon";
+
+$kon = mysqli_connect($server,$user,$ps,$nama_db);
+
+$hsl = mysqli_query($kon, "SELECT * FROM keuangan_tahunan");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Aset | Icon Plus</title>
+    <title>Laporan Keuangan | Icon Plus</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -60,7 +70,7 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="layanan.html"
+                <a class="nav-link collapsed" href="layananpage.php"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-file-invoice"></i>
                     <span>Layanan</span>
@@ -97,14 +107,14 @@
                 Keuangan
             </div>
 
-            <li class="nav-item">
-                <a class="nav-link" href="laporan_keuangan.html">
+            <li class="nav-item active">
+                <a class="nav-link" href="laporan_keuangan.php">
                     <i class="fas fa-money-bill-wave fa-chart-area"></i>
                     <span>Laporan Keuangan</span></a>
             </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="aset_icon.html">
+            <li class="nav-item">
+                <a class="nav-link" href="aset.php">
                     <i class="fas fa-money-bill-wave fa-chart-area"></i>
                     <span>Aset</span></a>
             </li>
@@ -235,12 +245,12 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Aset</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Laporan Keuangan</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Aset Tahunan</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Laporan Keuangan Tahunan</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -249,47 +259,25 @@
                                         <tr>
                                             <th class="col-sm-1">Nomor</th>
                                             <th>Tahun</th>
-                                            <th>Jumlah Aset</th>
+                                            <th>Jumlah Pendapatan</th>
+                                            <th>Jumlah Pengeluaran</th>
+                                            <th>Jumlah Laba</th>
                                             <th class="col-sm-1" style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php $i=1; ?>
+                                        <?php foreach($hsl as $keuangan) : ?>
                                         <tr>
-                                            <td class="col-sm-1">1</td>
-                                            <td>2015</td>
-                                            <td>2070866000</td>
-                                            <td style="text-align: center;"><button type="button" class="btn btn-primary" id="menu-btn">Review</button></td>
+                                            <td class="col-sm-1"><?= $i; ?></td>
+                                            <td><?= $keuangan['tahun']; ?></td>
+                                            <td><?= $keuangan['jml_pendapatan']; ?></td>
+                                            <td><?= $keuangan['jml_pengeluaran']; ?></td>
+                                            <td><?= $keuangan['jml_laba']; ?></td>
+                                            <td style="text-align: center;"><button type="button" class="btn btn-primary" id="menu-btn<?=$i?>">Review</button></td>
+                                            <?php $i++ ?>
                                         </tr>
-                                        <tr>
-                                            <td class="col-sm-1">2</td>
-                                            <td>2016</td>
-                                            <td>2272021000</td>
-                                            <td style="text-align: center;"><button type="button" class="btn btn-primary" id="menu-btn">Review</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="col-sm-1">3</td>
-                                            <td>2017</td>
-                                            <td>2606022000</td>
-                                            <td style="text-align: center;"><button type="button" class="btn btn-primary" id="menu-btn">Review</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="col-sm-1">4</td>
-                                            <td>2018</td>
-                                            <td>3098224000</td>
-                                            <td style="text-align: center;"><button type="button" class="btn btn-primary" id="menu-btn">Review</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="col-sm-1">5</td>
-                                            <td>2019</td>
-                                            <td>3674447000</td>
-                                            <td style="text-align: center;"><button type="button" class="btn btn-primary" id="menu-btn">Review</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="col-sm-1">6</td>
-                                            <td>2020</td>
-                                            <td>5688944700</td>
-                                            <td style="text-align: center;"><button type="button" class="btn btn-primary" id="menu-btn">Review</button></td>
-                                        </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -361,17 +349,22 @@
     <script src="js/demo/datatables-demo.js"></script>
 
     <script>
-        var menu_btn = document.querySelector("#menu-btn")
+        <?php $i=1 ?>
+        <?php foreach($hsl as $layanan) : ?>
+        var menu_btn<?=$i?> = document.querySelector("#menu-btn<?=$i?>")
+        
         var menu_btn_close = document.querySelector("#menu-btn-close")
         var sidebar = document.querySelector("#sidebar")
         var container = document.querySelector(".my-container")
-        menu_btn.addEventListener("click", () => {
+        menu_btn<?=$i?>.addEventListener("click", () => {
             sidebar.classList.toggle("active-nav")
         })
         menu_btn_close.addEventListener("click", () => {
           sidebar.classList.toggle("active-nav")
           container.classList.toggle("active-cont")
         })
+        <?php $i++ ?>
+        <?php endforeach; ?>
     </script>
 
 </body>
