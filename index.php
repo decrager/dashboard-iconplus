@@ -60,7 +60,7 @@
     )
     </script>
     
-    <title>Dashboard Icon Plus</title>
+    <title>Dashboard | Icon Plus</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
